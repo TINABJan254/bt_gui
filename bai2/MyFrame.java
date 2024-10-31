@@ -21,21 +21,17 @@ public class MyFrame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
-        // Tạo bảng điều khiển
         JPanel controlPanel = new JPanel();
         controlPanel.setLayout(new FlowLayout());
 
-        // Chọn loại hình
         shapeSelector = new JComboBox<>(new String[] {"Hình Vuông", "Hình Chữ Nhật", "Hình Tròn", "Hình Đa Giác"});
         controlPanel.add(new JLabel("Chọn Hình:"));
         controlPanel.add(shapeSelector);
 
-        // Chọn kiểu rỗng hay đặc
         fillTypeSelector = new JComboBox<>(new String[] {"Rỗng", "Đặc"});
         controlPanel.add(new JLabel("Kiểu hình:"));
         controlPanel.add(fillTypeSelector);
 
-        // Chọn màu
         chooseColorButton = new JButton("Chọn Màu");
         chooseColorButton.addActionListener(new ActionListener() {
             @Override
@@ -48,7 +44,6 @@ public class MyFrame extends JFrame {
         });
         controlPanel.add(chooseColorButton);
         
-        // Nút "Vẽ" để vẽ hình khi được nhấn
         drawButton = new JButton("Vẽ");
         drawButton.addActionListener(new ActionListener() {
             @Override
@@ -58,7 +53,6 @@ public class MyFrame extends JFrame {
         });
         controlPanel.add(drawButton);
         
-        // Nút "Xóa" để xóa tất cả các hình
         clearButton = new JButton("Xóa");
         clearButton.addActionListener(new ActionListener() {
             @Override
@@ -68,7 +62,6 @@ public class MyFrame extends JFrame {
         });
         controlPanel.add(clearButton);
         
-        // Nút thiết lập kích thước
         settingButton = new JButton("Thiết lập kích thước");
         settingButton.addActionListener(new ActionListener() {
             @Override
@@ -87,7 +80,6 @@ public class MyFrame extends JFrame {
         });
         controlPanel.add(settingButton);
         
-        // Bảng vẽ hình
         drawingPanel = new JPanel();
         drawingPanel.setBackground(Color.WHITE);
         add(drawingPanel, BorderLayout.CENTER);
@@ -95,7 +87,6 @@ public class MyFrame extends JFrame {
         add(controlPanel, BorderLayout.NORTH);
     }
     
-    // Hàm tạo và hiển thị JDialog để nhập kích thước
     private void showRectSettingDialog() {
         JDialog sizeDialog = new JDialog(this, "Thiết lập kích thước", true);
         sizeDialog.setSize(300, 150);
@@ -129,7 +120,6 @@ public class MyFrame extends JFrame {
         sizeDialog.setVisible(true);
     }
     
-    // Hàm tạo và hiển thị JDialog để nhập đường kính cho hình tròn
     private void showCircleSettingDialog() {
         JDialog circleDialog = new JDialog(this, "Thiết lập đường kính hình tròn", true);
         circleDialog.setSize(300, 100);
@@ -156,7 +146,6 @@ public class MyFrame extends JFrame {
         circleDialog.setVisible(true);
     }
 
-    // Hàm tạo và hiển thị JDialog để nhập cạnh cho hình vuông
     private void showSquareSettingDialog() {
         JDialog squareDialog = new JDialog(this, "Thiết lập cạnh hình vuông", true);
         squareDialog.setSize(300, 100);
